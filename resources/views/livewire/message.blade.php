@@ -1,10 +1,12 @@
 <div>
 {{--    @dd($chat)--}}
+    @if($chat != '')
     <div class="chat-container-11" wire:poll="selectChat({{$chat->id}})">
         <div class="chat-header">
             {{ $currentChat->them()->name }}
         </div>
         <div class="chat-message w-100" onload="updateScroll()">
+            @if($messages != '')
             @forelse($messages as $message)
                 @if($message->chat_id == $currentChat->id)
                     @if($message->user_id == Auth::user()->id)
@@ -23,6 +25,7 @@
                 @endif
             @empty
             @endforelse
+            @endif
         </div>
         <div class="chat-form mt-2">
             <form wire:submit.prevent="sendMessage({{$chat->id}})">
@@ -31,4 +34,5 @@
             </form>
         </div>
     </div>
+    @endif
 </div>

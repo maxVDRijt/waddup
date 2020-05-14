@@ -57,7 +57,14 @@ class Messages extends Component
             $this->currentChat = Chat::whereHas('users', function($q) {
                 $q->where('user_id', auth()->user()->id);
             })->orderby('updated_at', 'DESC')->first();
-            $this->messages = Message::where('chat_id', $this->currentChat->id)->get();
+            if ($this->currentChat == null)
+            {
+                $this->messages = '';
+                $this->currentChat = '';
+            }
+            else {
+                $this->messages = Message::where('chat_id', $this->currentChat->id)->get();
+            }
         }
         return view('livewire.message', [
             'messages' => $this->messages,
