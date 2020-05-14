@@ -1,0 +1,24 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//  Main colors
+$black-primary : #1e2124;
+$black-secondary : #282b30;
+$grey-primary : #36393e;
+$grey-secondary : #424549;
+$blue-primary : #7289da;
+$white-primary : #ebebeb;
+
+// Dashboard style
+.user-dashboard {
+    @import "pages/dashboard";
+}
