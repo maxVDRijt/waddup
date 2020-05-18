@@ -34,6 +34,32 @@
         margin-bottom: 15px;
         border-radius: 10px;
 
+        img {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            float: left;
+            margin: 2px;
+            margin-right: 10px;
+            border: $blue-primary solid 2px;
+        }
+
+        .group-avatar {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            float: left;
+            margin: 2px;
+            margin-right: 10px;
+            border: $blue-primary solid 2px;
+
+            .glyphicon {
+                font-size: 23px;
+                margin-left: 4px;
+                margin-top: 3px;
+            }
+        }
+
         h5 {
             padding: 8px;
         }
@@ -130,6 +156,18 @@
         overflow:auto;
         height: 83vh !important;
 
+        .global-message {
+            text-align: center;
+            margin: 0 auto;
+
+            p {
+                padding: 10px;
+                margin-bottom: 10px;
+                color: $blue-primary;
+                font-weight: bold;
+            }
+        }
+
         .send {
             background-color: $black-secondary;
             padding: 10px;
@@ -198,4 +236,58 @@
 .profile-section {
     height: 100vh;
     background-color: $black-secondary;
+
+    .user-profile-avatar {
+        height: 150px;
+        width: 150px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        img {
+            max-height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .user-profile-data {
+
+        h3 {
+            text-align: center;
+        }
+
+        h5 {
+            text-align: center;
+            color: $grey-secondary;
+        }
+    }
+
+    .group-info {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .user-list-item {
+        width: 100%;
+        padding: 5px;
+        .users-profile-avatar {
+            height: 50px;
+            width: 50px;
+
+            img {
+                max-height: 100%;
+                border-radius: 50%;
+                border: 2px $blue-primary solid;
+            }
+        }
+
+        .users-profile-data {
+
+            h5 {
+                color: $white-primary !important;
+                margin-left: 65px;
+                margin-top: 13px;
+            }
+        }
+    }
 }

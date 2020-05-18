@@ -13968,6 +13968,32 @@ a.text-dark:focus {
   border-radius: 10px;
 }
 
+.user-dashboard .people-section .open-chat img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  float: left;
+  margin: 2px;
+  margin-right: 10px;
+  border: #7289da solid 2px;
+}
+
+.user-dashboard .people-section .open-chat .group-avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  float: left;
+  margin: 2px;
+  margin-right: 10px;
+  border: #7289da solid 2px;
+}
+
+.user-dashboard .people-section .open-chat .group-avatar .glyphicon {
+  font-size: 23px;
+  margin-left: 4px;
+  margin-top: 3px;
+}
+
 .user-dashboard .people-section .open-chat h5 {
   padding: 8px;
 }
@@ -14065,6 +14091,18 @@ a.text-dark:focus {
   height: 83vh !important;
 }
 
+.user-dashboard .chat-section .chat-message .global-message {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user-dashboard .chat-section .chat-message .global-message p {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #7289da;
+  font-weight: bold;
+}
+
 .user-dashboard .chat-section .chat-message .send {
   background-color: #282b30;
   padding: 10px;
@@ -14131,5 +14169,54 @@ a.text-dark:focus {
 .user-dashboard .profile-section {
   height: 100vh;
   background-color: #282b30;
+}
+
+.user-dashboard .profile-section .user-profile-avatar {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.user-dashboard .profile-section .user-profile-avatar img {
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+.user-dashboard .profile-section .user-profile-data h3 {
+  text-align: center;
+}
+
+.user-dashboard .profile-section .user-profile-data h5 {
+  text-align: center;
+  color: #424549;
+}
+
+.user-dashboard .profile-section .group-info {
+  text-align: center;
+  margin: 20px;
+}
+
+.user-dashboard .profile-section .user-list-item {
+  width: 100%;
+  padding: 5px;
+}
+
+.user-dashboard .profile-section .user-list-item .users-profile-avatar {
+  height: 50px;
+  width: 50px;
+}
+
+.user-dashboard .profile-section .user-list-item .users-profile-avatar img {
+  max-height: 100%;
+  border-radius: 50%;
+  border: 2px #7289da solid;
+}
+
+.user-dashboard .profile-section .user-list-item .users-profile-data h5 {
+  color: #ebebeb !important;
+  margin-left: 65px;
+  margin-top: 13px;
 }
 

@@ -28,12 +28,18 @@
                             </div>
                         @endif
                     @else
-                        @if($message->user_id == Auth::user()->id)
-                            <div class="w-100 float-right">
-                                <div class="send float-right">
-                                    {{ $message->message }}
+                        @if($message->user_id == 0)
+                            <div class="w-100 float-left">
+                                <div class="global-message">
+                                    <p class="w-auto">{{ $message->message }}</p>
                                 </div>
                             </div>
+                        @elseif($message->user_id == Auth::user()->id)
+                        <div class="w-100 float-right">
+                            <div class="send float-right">
+                                {{ $message->message }}
+                            </div>
+                        </div>
                         @else
                             <div class="w-100 float-left">
                                 <div class="get float-left">

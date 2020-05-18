@@ -19,7 +19,13 @@ class Chat extends Model
 
     public function them()
     {
-        return  $this->users()->where('users.id', '!=', auth()->id())->first();
+        if ($this->type == 'private')
+        {
+            return  $this->users()->where('users.id', '!=', auth()->id())->first();
+        }
+        else {
+            return  $this->users()->where('users.id', '!=', auth()->id())->get();
+        }
     }
 
     public function messages()

@@ -35,6 +35,7 @@
                                 <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/>
                             </svg>
                         </p>
+                        <a class="btn btn-danger" href="{{ route('auth.logout') }}">Logout</a>
                     </div>
                     <div class="all-chats">
                        @livewire('sidebar')
@@ -47,7 +48,7 @@
                     @livewire('messages')
                 </div>
                 <div class="col-md-2 profile-section">
-                    <a class="btn btn-danger" href="{{ route('auth.logout') }}">Logout</a>
+                    @livewire('chat-info')
                 </div>
             </div>
         </div>

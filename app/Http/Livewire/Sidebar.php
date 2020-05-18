@@ -10,6 +10,7 @@ class Sidebar extends Component
     public function selectChat($id)
     {
         $this->emit('selectChat', $id);
+        $this->emit('chatInfo', $id);
     }
 
     public function render()
