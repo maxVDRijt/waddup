@@ -20,8 +20,8 @@ class Messages extends Component
 
     public function selectChat($id)
     {
-        $this->messages = Message::where('chat_id', $id)->get();
-        $this->currentChat = Chat::whereId($id)->first();
+        $this->currentChat = Chat::with('messages')->whereId($id)->first();
+        $this->messages = $this->currentChat->messages;
     }
 
     public function sendMessage($id)
@@ -36,18 +36,11 @@ class Messages extends Component
         $message->message = $this->text;
         $message->save();
 
-        Chat::whereId($id)->update([
-            'updated_at' => now(),
-        ]);
+       $this->currentChat->touch();
 
         $this->reset('text');
 
-        $this->messages = Message::where('chat_id', $id)->get();
-        $this->currentChat = Chat::whereId($id)->first();
-        return view('livewire.message', [
-            'messages' => $this->messages,
-            'chat' => $this->currentChat,
-        ]);
+        $this->messages = $this->currentChat->messages()->get();
     }
 
     public function render()

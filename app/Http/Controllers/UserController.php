@@ -13,6 +13,7 @@ class UserController extends Controller
 {
     public function dashboard()
     {
+//        dd(Auth::id());
         $AuthUser = Auth::id();
         $user = User::where('id', $AuthUser)->first();
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" id="csrf">
     <title>Waddup</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,5 +21,10 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 
     @livewireScripts
+    <script>
+        document.addEventListener('livewire:load', () => {
+            setInterval(function(){ window.livewire.emit('alive'); }, 1800000);
+        });
+    </script>
 </body>
 </html>

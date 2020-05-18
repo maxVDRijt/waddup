@@ -13937,6 +13937,29 @@ a.text-dark:focus {
 .user-dashboard .people-section {
   height: 100vh;
   background-color: #282b30;
+  position: relative;
+}
+
+.user-dashboard .people-section .my-info {
+  height: 70px;
+  padding: 10px;
+}
+
+.user-dashboard .people-section .my-info img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: solid 2px #7289da;
+}
+
+.user-dashboard .people-section .my-info p {
+  font-size: 20px;
+  color: #7289da;
+  margin-top: -5px;
+}
+
+.user-dashboard .people-section .my-info p:hover {
+  cursor: pointer;
 }
 
 .user-dashboard .people-section .open-chat {
@@ -13967,6 +13990,62 @@ a.text-dark:focus {
   font-weight: bold;
 }
 
+.user-dashboard .people-section .friend-section {
+  position: absolute;
+  bottom: 30px;
+  width: 90%;
+}
+
+.user-dashboard .people-section .friend-section .friend-requests {
+  float: left;
+  border: #7289da solid 3px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.user-dashboard .people-section .friend-section .friend-requests h5 {
+  color: white;
+}
+
+.user-dashboard .people-section .friend-section .friend-requests p {
+  color: white;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.user-dashboard .people-section .friend-section .add-friend {
+  width: 100%;
+}
+
+.user-dashboard .people-section .friend-section .add-friend input[type=text] {
+  margin-right: 10px;
+  background-color: #1e2124;
+  border: solid #7289da 2px;
+  padding: 5px;
+  color: white;
+  border-radius: 8px;
+  width: 77%;
+}
+
+.user-dashboard .people-section .friend-section .add-friend button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1e2124 !important;
+  border-color: #7289da !important;
+  color: white;
+  font-weight: bold;
+}
+
+.user-dashboard .people-section .friend-section .add-friend button svg {
+  font-size: 30px;
+  padding: 0px;
+  padding-left: 4px;
+  padding-bottom: 2px;
+}
+
 .user-dashboard .chat-section {
   height: 100vh;
   background-color: #424549;
@@ -13993,6 +14072,10 @@ a.text-dark:focus {
   border-radius: 10px;
   max-width: 50%;
   margin-bottom: 10px;
+}
+
+.user-dashboard .chat-section .chat-message .send h5 {
+  font-weight: bold;
 }
 
 .user-dashboard .chat-section .chat-message .get {
@@ -14048,21 +14131,5 @@ a.text-dark:focus {
 .user-dashboard .profile-section {
   height: 100vh;
   background-color: #282b30;
-}
-
-.user-dashboard .profile-section .friend-requests {
-  float: left;
-  border: #F5F9F9 solid 3px;
-  border-radius: 10px;
-}
-
-.user-dashboard .profile-section .friend-requests h5 {
-  color: white;
-}
-
-.user-dashboard .profile-section .friend-requests p {
-  color: white;
-  font-weight: bold;
-  margin-right: 5px;
 }
 

@@ -68,6 +68,7 @@ class AuthController extends Controller
             'email_login'  => 'required|max:255|email',
             'password_login'  => 'required',
         ]);
+//        dd($request->all());
 
 //        Check if username and password match in database
         $username = $request->get('email_login');
@@ -76,11 +77,11 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials) == true) {
 //            Auth passed
-            return redirect('/dashboard');
+            return redirect()->route('user.dashboard');
         }
         else {
 //            Auth not passed
-            return redirect("/account")->with([
+            return redirect()->route('auth.login')->with([
                 'danger_login_login' => 'Email or password not correct!!'
             ]);
         }
@@ -89,6 +90,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/account');
     }
 }

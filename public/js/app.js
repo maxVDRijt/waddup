@@ -37328,15 +37328,14 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-$(document).ready(function () {
-  // Hide all chats
+$(document).ready(function () {// Hide all chats
   // $(".chat-section").children().hide();
   // $(".chats-overview").show();
   //  Function for opening chat
-  $('.open-chat').click(function () {
-    $(".open-chat").removeClass('active');
-    $(this).addClass('active');
-  });
+  // $('.open-chat').click(function () {
+  //     $(".open-chat").removeClass('active');
+  //     $(this).addClass('active');
+  // })
 });
 
 /***/ }),
@@ -37404,8 +37403,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\code\waddup.test\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\code\waddup.test\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

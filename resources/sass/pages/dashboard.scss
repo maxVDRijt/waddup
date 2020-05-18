@@ -5,6 +5,29 @@
 .people-section {
     height: 100vh;
     background-color: $black-secondary;
+    position: relative;
+
+    .my-info {
+        height: 70px;
+        padding: 10px;
+
+        img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: solid 2px $blue-primary;
+        }
+
+        p {
+            font-size: 20px;
+            color: $blue-primary;
+            margin-top: -5px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 
     .open-chat {
         margin: 5px;
@@ -33,6 +56,61 @@
             font-weight: bold;
         }
     }
+
+    .friend-section {
+        position: absolute;
+        bottom: 30px;
+        width: 90%;
+
+        .friend-requests {
+            float: left;
+            border: $blue-primary solid 3px;
+            border-radius: 10px;
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            h5 {
+                color: white;
+            }
+            p {
+                color: white;
+                font-weight: bold;
+                margin-right: 5px;
+            }
+        }
+
+        .add-friend {
+            width: 100%;
+
+            input[type=text] {
+                margin-right: 10px;
+                background-color: $black-primary;
+                border: solid $blue-primary 2px;
+                padding: 5px;
+                color: white;
+                border-radius: 8px;
+                width: 77%;
+            }
+
+            button {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $black-primary !important;
+                border-color: $blue-primary !important;
+                color: white;
+                font-weight: bold;
+
+                svg {
+                    font-size: 30px;
+                    padding: 0px;
+                    padding-left: 4px;
+                    padding-bottom: 2px;
+                }
+            }
+        }
+
+    }
 }
 
 .chat-section {
@@ -59,6 +137,10 @@
             border-radius: 10px;
             max-width: 50%;
             margin-bottom: 10px;
+
+            h5 {
+                font-weight: bold;
+            }
         }
 
         .get {
@@ -116,18 +198,4 @@
 .profile-section {
     height: 100vh;
     background-color: $black-secondary;
-
-    .friend-requests {
-        float: left;
-        border: #F5F9F9 solid 3px;
-        border-radius: 10px;
-        h5 {
-            color: white;
-        }
-        p {
-            color: white;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-    }
 }

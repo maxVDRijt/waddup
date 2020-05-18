@@ -14,25 +14,16 @@ class Chat extends Model
 
     public function me()
     {
-        $users = $this->users()->get();
-        foreach ($users as $user)
-        {
-            if ($user->id == Auth::user()->id)
-            {
-                return $user;
-            }
-        }
+       return $this->users()->where('users.id', auth()->id())->first();
     }
 
     public function them()
     {
-        $users = $this->users()->get();
-        foreach ($users as $user)
-        {
-            if ($user->id != Auth::user()->id)
-            {
-                return $user;
-            }
-        }
+        return  $this->users()->where('users.id', '!=', auth()->id())->first();
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 }
