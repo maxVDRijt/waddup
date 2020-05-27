@@ -37328,14 +37328,19 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-$(document).ready(function () {// Hide all chats
-  // $(".chat-section").children().hide();
-  // $(".chats-overview").show();
-  //  Function for opening chat
-  // $('.open-chat').click(function () {
-  //     $(".open-chat").removeClass('active');
-  //     $(this).addClass('active');
-  // })
+$(document).ready(function () {
+  var scrolled = false;
+
+  function updateScroll() {
+    if (!scrolled) {
+      var element = document.getElementsByClassName("chat-message");
+      element.scrollTop = element.scrollHeight;
+    }
+  }
+
+  $(".chat-message").on('scroll', function () {
+    scrolled = true;
+  });
 });
 
 /***/ }),

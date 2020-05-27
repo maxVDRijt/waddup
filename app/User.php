@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -50,5 +51,20 @@ class User extends Authenticatable
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function setChatRoleAttribute()
+    {
+        $users = User::whereHas('chats', function($q) {
+            $q->where('role', 'admin');
+        })->get();
+        foreach ($users as $user)
+        {
+            if ($user->id == $this->id)
+            {
+                return 'true';
+            }
+        }
+        return 'false';
     }
 }

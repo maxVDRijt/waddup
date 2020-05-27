@@ -1,14 +1,15 @@
 require('./bootstrap');
 
 $(document).ready(() => {
+    var scrolled = false;
+    function updateScroll(){
+        if(!scrolled){
+            var element = document.getElementsByClassName("chat-message");
+            element.scrollTop = element.scrollHeight;
+        }
+    }
 
-    // Hide all chats
-    // $(".chat-section").children().hide();
-    // $(".chats-overview").show();
-
-    //  Function for opening chat
-    // $('.open-chat').click(function () {
-    //     $(".open-chat").removeClass('active');
-    //     $(this).addClass('active');
-    // })
+    $(".chat-message").on('scroll', function(){
+        scrolled=true;
+    });
 });

@@ -34,4 +34,27 @@ class UserController extends Controller
 
         return view('profile.dashboard')->with($data);
     }
+
+    public function show()
+    {
+        return view('profile.show');
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|max:255',
+            'name' => 'required|max:255',
+            'email' => 'required|max:255|email',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+//        Check if avatar needs to be updated
+        if (isset($request->avatar))
+        {
+            $image = $request->avatar->store('images');
+            $request = array_merge($request, ['avatar' => $image]);
+        }
+
+    }
 }

@@ -27,6 +27,8 @@ Route::get('/logout', [AuthController::class,'logout'])->name('auth.logout');
 Route::middleware(['CheckAuth'])->group(function () {
 //    User related pages
     Route::get('/', 'UserController@dashboard')->name('user.dashboard');
+    Route::get('/profile', 'UserController@show')->name('user.show');
+    Route::post('/profile', 'UserController@update')->name('user.update');
 
 //    Friend related pages
 //    Route::post('/friend/add', 'FriendController@store')->name('friend.add');

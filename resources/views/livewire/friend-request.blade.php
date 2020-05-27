@@ -26,11 +26,11 @@
                     {{ session('friend_danger') }}
             </div>
         @endif
-            @if(session()->has('friend_success'))
-                <div class="alert alert-success">
-                    {{ session('friend_success') }}
-                </div>
-            @endif
+        @if(session()->has('friend_success'))
+            <div class="alert alert-success">
+                {{ session('friend_success') }}
+            </div>
+        @endif
         <form wire:submit.prevent="sendRequest">
             @csrf
             <input type="text" wire:model="requestName">

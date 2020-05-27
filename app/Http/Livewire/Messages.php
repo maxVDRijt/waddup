@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Chat;
 use App\Message;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 

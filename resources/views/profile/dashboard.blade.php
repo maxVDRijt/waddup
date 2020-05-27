@@ -23,11 +23,34 @@
             </div>
         </div>
 
+{{--        Add people on group modal   --}}
+        <div class="modal fade" id="addGroupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Select new members</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @livewire('group-add')
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 people-section">
                     <div class="my-info">
-                        <img src="{{ $user->avatar }}">
+                        <a href="{{ route('user.show') }}">
+                            <img src="{{ $user->avatar }}" class="float-left">
+                            <div class="auth-data float-left">
+                                <h4>{{ $user->name }}</h4>
+                                <p>{{ $user->username }}</p>
+                            </div>
+                        </a>
                         <p class="float-right" data-toggle="modal" data-target="#exampleModal">
                             <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
@@ -35,9 +58,9 @@
                                 <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/>
                             </svg>
                         </p>
-                        <a class="btn btn-danger" href="{{ route('auth.logout') }}">Logout</a>
+{{--                        <a class="btn btn-danger" href="{{ route('auth.logout') }}">Logout</a>--}}
                     </div>
-                    <div class="all-chats">
+                    <div class="all-chats" style="margin-top: 21px;">
                        @livewire('sidebar')
                     </div>
                     <div class="friend-section">
